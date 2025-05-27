@@ -1,0 +1,20 @@
+# Task ID: 4
+# Title: Create Fun Facts Content Database
+# Status: done
+# Dependencies: None
+# Priority: medium
+# Description: Compile and structure the database of fun facts for each dog breed, including fact text and image generation prompts.
+# Details:
+1. Create a JSON structure to store breed facts and image prompts
+2. For each breed (Labrador, Corgi, Pug, German Shepherd, Dachshund), compile 5 fun facts
+3. Write child-friendly, simple sentences for each fact (max 10 words)
+4. Create detailed image generation prompts for each fact
+5. Include metadata like fact difficulty or category
+6. Structure the data to easily map facts to their corresponding images
+7. Add placeholder image URLs that will be updated after generation
+8. Include alt text descriptions for each fact/image combination
+9. Validate all text content is age-appropriate
+10. Implement versioning for content updates
+
+# Test Strategy:
+Review all facts for age appropriateness and reading level. Verify JSON structure is valid and properly formatted. Test loading the data structure in the application. Have content reviewed by someone familiar with early childhood education if possible.

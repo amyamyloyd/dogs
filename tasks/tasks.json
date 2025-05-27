@@ -1,0 +1,412 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Create Project Structure and Design System",
+      "description": "Set up the initial project structure with HTML/CSS/JavaScript and establish the design system with bright, child-friendly colors and large interactive elements.",
+      "details": "1. Initialize project repository\n2. Create folder structure (assets, styles, scripts)\n3. Define color palette suitable for children (bright, inviting colors)\n4. Create CSS variables for consistent styling\n5. Design typography system with large, readable fonts\n6. Implement base layout with responsive design\n7. Create reusable UI components for buttons and cards\n8. Ensure all interactive elements are extra-large for children's touch use\n9. Implement accessibility features including alt text structure\n10. Set up linting and formatting tools",
+      "testStrategy": "Validate design system across different device sizes. Test color contrast for accessibility. Verify button sizes are appropriate for children's motor skills (at least 44x44px). Ensure the layout works without scrolling on standard tablet devices.",
+      "priority": "high",
+      "dependencies": [],
+      "status": "done",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Set up project repository and folder structure",
+          "description": "Initialize the project repository and create the necessary folder structure for assets, styles, and scripts.",
+          "dependencies": [],
+          "details": "Create a new Git repository, set up .gitignore, and establish folders for assets (images, icons), styles (CSS files), and scripts (JavaScript files).",
+          "status": "done",
+          "testStrategy": "Verify the existence of the repository and correct folder structure using file system checks."
+        },
+        {
+          "id": 2,
+          "title": "Define color palette and typography system",
+          "description": "Create a child-friendly color palette and establish a typography system with large, readable fonts.",
+          "dependencies": [
+            1
+          ],
+          "details": "Select bright, inviting colors suitable for children. Define CSS variables for colors and create a typography scale with large font sizes. Implement these in a base CSS file.",
+          "status": "done",
+          "testStrategy": "Review the CSS file to ensure color variables and typography classes are properly defined and meet accessibility standards."
+        },
+        {
+          "id": 3,
+          "title": "Implement responsive base layout",
+          "description": "Create a responsive base layout that adapts to different screen sizes while maintaining large, child-friendly elements.",
+          "dependencies": [
+            2
+          ],
+          "details": "Develop a flexible grid system or use CSS Flexbox/Grid to create a responsive layout. Ensure all interactive elements are extra-large for easy touch interaction.",
+          "status": "done",
+          "testStrategy": "Test the layout on various device sizes and verify that all elements scale appropriately and remain easily interactable."
+        },
+        {
+          "id": 4,
+          "title": "Develop reusable UI components",
+          "description": "Create reusable UI components for buttons and cards with large, interactive elements suitable for children.",
+          "dependencies": [
+            2,
+            3
+          ],
+          "details": "Design and implement button and card components using HTML and CSS. Ensure they are scalable, accessible, and consistent with the established design system.",
+          "status": "done",
+          "testStrategy": "Create a component library page to showcase and test all UI components for consistency and interactivity."
+        },
+        {
+          "id": 5,
+          "title": "Implement accessibility features and set up development tools",
+          "description": "Add accessibility features including alt text structure and set up linting and formatting tools for the project.",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "details": "Implement proper semantic HTML, ensure correct heading structure, add ARIA labels where necessary, and include alt text for images. Set up ESLint, Prettier, and any other necessary development tools.",
+          "status": "done",
+          "testStrategy": "Run accessibility audits using tools like aXe or WAVE, and verify that linting and formatting tools are working correctly across all project files."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Implement Age Selection UI Component",
+      "description": "Create the age selection prompt that asks children their age in years and months using a simple, visual interface.",
+      "details": "1. Design a child-friendly age selection component with dropdown or visual selector\n2. Create separate selectors for years (1-5) and months (0-11)\n3. Use visual cues like candles on a cake for years\n4. Implement large touch targets for all interactive elements\n5. Store selected age in browser localStorage\n6. Add simple animations for engagement\n7. Include skip option for parents\n8. Ensure the component is fully accessible\n9. Add clear instructions with minimal text\n10. Implement basic validation to prevent impossible combinations",
+      "testStrategy": "Test usability with target age group if possible. Verify that selections are correctly stored. Test keyboard navigation and screen reader compatibility. Ensure the interface is intuitive enough for young children to use with minimal adult assistance.",
+      "priority": "medium",
+      "dependencies": [
+        1
+      ],
+      "status": "done",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Visual Age Selection Interface",
+          "description": "Create a child-friendly UI design for selecting age in years (1-5) and months (0-11) using visual elements.",
+          "dependencies": [],
+          "details": "Use candle icons for years, colorful numbers for months. Ensure large touch targets and clear visual hierarchy.",
+          "status": "done",
+          "testStrategy": "Conduct usability testing with a group of children aged 1-5 to validate the design's effectiveness and appeal."
+        },
+        {
+          "id": 2,
+          "title": "Implement Age Selection Component",
+          "description": "Develop the interactive age selection component based on the approved design.",
+          "dependencies": [
+            1
+          ],
+          "details": "Use HTML, CSS, and JavaScript to create separate selectors for years and months. Implement touch-friendly controls and basic animations for engagement.",
+          "status": "done",
+          "testStrategy": "Perform cross-browser testing and ensure responsiveness on various device sizes."
+        },
+        {
+          "id": 3,
+          "title": "Add Accessibility Features",
+          "description": "Ensure the age selection component is fully accessible to all users.",
+          "dependencies": [
+            2
+          ],
+          "details": "Implement ARIA attributes, keyboard navigation, and screen reader compatibility. Ensure sufficient color contrast and text alternatives for visual elements.",
+          "status": "done",
+          "testStrategy": "Conduct accessibility audit using automated tools and manual testing with assistive technologies."
+        },
+        {
+          "id": 4,
+          "title": "Implement Data Storage and Validation",
+          "description": "Add functionality to store the selected age in browser localStorage and implement basic validation.",
+          "dependencies": [
+            2
+          ],
+          "details": "Store age data in JSON format. Implement validation to prevent impossible age combinations. Add a skip option for parents.",
+          "status": "done",
+          "testStrategy": "Write unit tests for storage and validation functions. Test edge cases and error handling."
+        },
+        {
+          "id": 5,
+          "title": "Add Instructions and Final Polish",
+          "description": "Integrate clear instructions with minimal text and apply final visual enhancements.",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "details": "Create concise, child-friendly instructions. Refine animations and visual feedback. Ensure consistent styling and smooth user experience.",
+          "status": "done",
+          "testStrategy": "Conduct a final round of user testing with both children and parents to validate the complete component."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Build Breed Selection Interface",
+      "description": "Develop the breed selector interface with large buttons featuring cartoon-style images of the five dog breeds (Corgis, Labradors, Pugs, German Shepherds, Dachshunds).",
+      "details": "1. Create a JSON structure to store breed information\n2. Design and implement large, touchable breed selection buttons\n3. Source or create cartoon-style dog images for each breed\n4. Add hover/focus states with simple animations\n5. Implement click/tap handlers to trigger breed selection\n6. Ensure buttons are arranged in a single row or grid without scrolling\n7. Add visual feedback when a breed is selected\n8. Include breed names with simple, readable text\n9. Ensure all images have appropriate alt text\n10. Implement keyboard navigation between breed options",
+      "testStrategy": "Test touch target size on various devices. Verify visual feedback works correctly. Test with screen readers to ensure accessibility. Verify that the layout remains visible without scrolling on target devices. Test keyboard navigation between breed options.",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "done",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Breed Selection Layout",
+          "description": "Create a responsive layout for the breed selection interface with large buttons arranged in a single row or grid.",
+          "dependencies": [],
+          "details": "Use CSS Grid or Flexbox for layout. Ensure buttons are evenly spaced and sized appropriately for different screen sizes. Implement media queries for responsiveness.",
+          "status": "done",
+          "testStrategy": "Test layout on various screen sizes and orientations to ensure proper arrangement without scrolling."
+        },
+        {
+          "id": 2,
+          "title": "Source and Optimize Cartoon Dog Images",
+          "description": "Obtain or create cartoon-style images for the five dog breeds and optimize them for web use.",
+          "dependencies": [],
+          "details": "Source images for Corgis, Labradors, Pugs, German Shepherds, and Dachshunds. Ensure consistent style and size. Optimize images for web performance.",
+          "status": "done",
+          "testStrategy": "Verify image quality, file size, and loading speed across different devices and connection speeds."
+        },
+        {
+          "id": 3,
+          "title": "Implement Interactive Breed Buttons",
+          "description": "Develop interactive buttons for each breed with hover/focus states, animations, and selection feedback.",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Create buttons with breed images and names. Implement hover and focus states with CSS transitions. Add click/tap handlers for breed selection. Ensure proper keyboard navigation.",
+          "status": "done",
+          "testStrategy": "Test button interactions using mouse, touch, and keyboard. Verify visual feedback and accessibility compliance."
+        },
+        {
+          "id": 4,
+          "title": "Create Breed Data Structure",
+          "description": "Develop a JSON structure to store breed information and integrate it with the selection interface.",
+          "dependencies": [],
+          "details": "Create a JSON object containing breed names, image paths, and any additional relevant information. Use this data to populate the breed selection buttons dynamically.",
+          "status": "done",
+          "testStrategy": "Validate JSON structure and ensure correct data binding to the UI elements."
+        },
+        {
+          "id": 5,
+          "title": "Implement Accessibility Features",
+          "description": "Ensure the breed selection interface is fully accessible, including proper alt text and ARIA attributes.",
+          "dependencies": [
+            3,
+            4
+          ],
+          "details": "Add descriptive alt text to all breed images. Implement ARIA labels and roles for interactive elements. Ensure proper focus management and keyboard navigation.",
+          "status": "done",
+          "testStrategy": "Conduct accessibility audit using automated tools and manual testing with screen readers and keyboard-only navigation."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Create Fun Facts Content Database",
+      "description": "Compile and structure the database of fun facts for each dog breed, including fact text and image generation prompts.",
+      "details": "1. Create a JSON structure to store breed facts and image prompts\n2. For each breed (Labrador, Corgi, Pug, German Shepherd, Dachshund), compile 5 fun facts\n3. Write child-friendly, simple sentences for each fact (max 10 words)\n4. Create detailed image generation prompts for each fact\n5. Include metadata like fact difficulty or category\n6. Structure the data to easily map facts to their corresponding images\n7. Add placeholder image URLs that will be updated after generation\n8. Include alt text descriptions for each fact/image combination\n9. Validate all text content is age-appropriate\n10. Implement versioning for content updates",
+      "testStrategy": "Review all facts for age appropriateness and reading level. Verify JSON structure is valid and properly formatted. Test loading the data structure in the application. Have content reviewed by someone familiar with early childhood education if possible.",
+      "priority": "medium",
+      "dependencies": [],
+      "status": "done",
+      "subtasks": []
+    },
+    {
+      "id": 5,
+      "title": "Implement Backend Image Generation Service",
+      "description": "Develop a script to automatically generate cartoon-style images for all breeds and fun facts using the OpenAI DALL-E API, based on the prompts in breedData.ts.",
+      "status": "in-progress",
+      "dependencies": [
+        4
+      ],
+      "priority": "high",
+      "details": "1. Create a script (Node.js or Python) that automates image generation\n2. Configure the script to read image prompts from breedData.ts\n3. Set up environment variables to securely store the OpenAI API key in .env\n4. Implement API calls to OpenAI DALL-E with appropriate parameters for cartoon-style images\n5. Generate main breed images using the imagePrompt fields from breedData.ts\n6. Save main breed images to dogbreed-app/src/assets/images/\n7. Generate fun fact images for each breed's fun facts\n8. Save fun fact images to dogbreed-app/src/assets/images/funfacts/\n9. Ensure consistency in style across all images (cartoon-style, child-friendly)\n10. Maintain a consistent aspect ratio and resolution for all images\n11. Implement error handling for API failures or rate limiting\n12. Add logging to track progress of image generation\n13. Verify all images are appropriate for the target age group\n14. Ensure filenames match the expected format in the application\n\nNote: This approach uses a script to automate the image generation process rather than implementing a full backend service. The script will handle the API calls to OpenAI and manage the storage of images locally.",
+      "testStrategy": "Test the script with a small subset of breeds before running it for all data. Verify API integration works correctly. Check error handling for various failure scenarios. Review all generated images for style consistency. Verify images are appropriate for the target age group. Confirm all images are saved to the correct paths with proper filenames. Test the application with the new images to ensure they load correctly. Verify all breeds and fun facts have corresponding images.",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Set up project structure and dependencies for image generation script",
+          "description": "Create a Node.js project with necessary dependencies for OpenAI API integration and environment variable management.",
+          "dependencies": [],
+          "details": "1. Initialize a new Node.js project with `npm init`\n2. Install required packages: `openai`, `dotenv`, `fs-extra`, and `axios`\n3. Create a basic project structure with folders for source code and utilities\n4. Set up a .env file to store the OpenAI API key securely\n5. Create a configuration file to manage paths and constants\n6. Set up a basic logging utility for tracking progress",
+          "status": "done",
+          "testStrategy": "Verify all dependencies install correctly and the project structure is properly initialized. Test loading of environment variables."
+        },
+        {
+          "id": 2,
+          "title": "Implement OpenAI DALL-E API client function",
+          "description": "Create a reusable function to handle API calls to OpenAI's DALL-E service with appropriate error handling and rate limiting considerations.",
+          "dependencies": [
+            1
+          ],
+          "details": "1. Create a client module that initializes the OpenAI SDK with the API key from .env\n2. Implement a function that takes a prompt and returns the generated image URL\n3. Configure the API call with parameters for cartoon-style images (size, quality, style)\n4. Add error handling for API failures, rate limiting, and other potential issues\n5. Implement exponential backoff for retries when rate limited\n6. Add logging for successful generations and failures",
+          "status": "in-progress",
+          "testStrategy": "Test the API client with a sample prompt to ensure it successfully connects to OpenAI and returns an image URL. Verify error handling by simulating API failures."
+        },
+        {
+          "id": 3,
+          "title": "Develop image download and storage functionality",
+          "description": "Create functions to download images from URLs returned by the DALL-E API and save them to the appropriate locations in the project structure.",
+          "dependencies": [
+            1
+          ],
+          "details": "1. Implement a function to download an image from a URL using axios\n2. Create a function to save images to the correct paths (src/assets/images/ for breed images, src/assets/images/funfacts/ for fun fact images)\n3. Ensure directories exist before saving files\n4. Implement proper file naming conventions based on breed IDs and fun fact indices\n5. Add error handling for download and file system operations\n6. Include logging for successful saves and any failures",
+          "status": "pending",
+          "testStrategy": "Test downloading a sample image from a URL and verify it saves correctly to the specified location with the expected filename format."
+        },
+        {
+          "id": 4,
+          "title": "Create main script to parse breed data and orchestrate image generation",
+          "description": "Develop the main script that reads breed data, extracts prompts, and coordinates the generation and saving of all required images.",
+          "dependencies": [
+            2,
+            3
+          ],
+          "details": "1. Implement functionality to parse and import the breedData.ts file\n2. Create a main function that loops through all breeds and their fun facts\n3. For each breed, extract the imagePrompt and generate the main breed image\n4. For each fun fact, construct an appropriate prompt and generate an image\n5. Implement progress tracking to show completion percentage\n6. Add logic to skip existing images to allow for resuming interrupted runs\n7. Implement concurrency control to avoid overwhelming the API",
+          "status": "pending",
+          "testStrategy": "Test with a subset of breeds to verify the script correctly parses breed data, generates images, and saves them to the appropriate locations."
+        },
+        {
+          "id": 5,
+          "title": "Optimize image generation parameters and verify results",
+          "description": "Fine-tune the image generation parameters to ensure consistency in style and quality across all images, and implement verification of the generated images.",
+          "dependencies": [
+            4
+          ],
+          "details": "1. Experiment with different prompt structures to achieve consistent cartoon-style images\n2. Add prefix/suffix text to prompts to maintain style consistency\n3. Implement image verification to check dimensions, file size, and format\n4. Create a report of all generated images with their paths and sizes\n5. Add functionality to identify and regenerate any problematic images\n6. Implement a final verification step to ensure all required images exist\n7. Create documentation for the image generation process",
+          "status": "pending",
+          "testStrategy": "Generate a complete set of images for a few breeds and manually review them for style consistency, appropriateness, and quality. Verify the automated checks correctly identify any issues."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Develop Fun Fact Gallery Component",
+      "description": "Create the gallery component that displays five image cards for the selected breed, each showing a fun fact with an AI-generated image and caption.",
+      "details": "1. Design the gallery layout to display 5 fact cards without scrolling\n2. Create responsive card components with image and caption areas\n3. Implement loading states for when images are being fetched\n4. Add simple animations for card appearance\n5. Ensure all text is large and readable for young children\n6. Implement touch interactions for exploring cards\n7. Add visual cues to indicate interactivity\n8. Ensure proper spacing between cards for easy touch targeting\n9. Implement keyboard navigation between cards\n10. Add focus states for accessibility\n\nExample card component structure:\n```html\n<div class=\"fact-card\" tabindex=\"0\">\n  <div class=\"card-image\">\n    <img src=\"[image-url]\" alt=\"[alt-text]\" />\n  </div>\n  <div class=\"card-caption\">\n    <p>[fact-text]</p>\n  </div>\n</div>```",
+      "testStrategy": "Test gallery layout on various screen sizes. Verify cards are properly spaced and accessible. Test touch interactions on mobile devices. Verify keyboard navigation works correctly. Test with screen readers to ensure accessibility. Verify loading states display correctly.",
+      "priority": "high",
+      "dependencies": [
+        1,
+        3
+      ],
+      "status": "done",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design and implement responsive gallery layout",
+          "description": "Create a responsive layout for the gallery component that displays 5 fact cards without scrolling, ensuring proper spacing and touch-friendly design.",
+          "dependencies": [],
+          "details": "Use CSS Grid or Flexbox for layout. Implement media queries for different screen sizes. Ensure cards have sufficient spacing for touch targets (at least 44x44 pixels). Test on various devices and orientations.",
+          "status": "done",
+          "testStrategy": "Verify layout on different screen sizes and orientations. Check touch target sizes using browser developer tools."
+        },
+        {
+          "id": 2,
+          "title": "Develop interactive fact card component",
+          "description": "Create a reusable card component with image and caption areas, including animations, focus states, and keyboard navigation.",
+          "dependencies": [
+            1
+          ],
+          "details": "Use the provided HTML structure as a base. Implement CSS transitions for card appearance. Add ':hover' and ':focus' styles. Ensure 'tabindex' attribute is set for keyboard navigation. Use 'aria-' attributes for accessibility.",
+          "status": "done",
+          "testStrategy": "Test keyboard navigation and focus states. Verify animations work across browsers. Conduct accessibility audit using tools like axe or WAVE."
+        },
+        {
+          "id": 3,
+          "title": "Implement image loading and error handling",
+          "description": "Add loading states for images and handle potential errors when fetching or displaying images.",
+          "dependencies": [
+            2
+          ],
+          "details": "Use a placeholder or skeleton screen while images are loading. Implement error handling to display a fallback image or message if the image fails to load. Consider using the 'loading' attribute on img tags for native lazy loading.",
+          "status": "done",
+          "testStrategy": "Test with slow network conditions. Simulate image loading failures and verify error handling."
+        },
+        {
+          "id": 4,
+          "title": "Optimize text readability for children",
+          "description": "Ensure all text in the gallery is large, clear, and easily readable for young children.",
+          "dependencies": [
+            2
+          ],
+          "details": "Use a child-friendly font (e.g., Comic Sans or similar). Set font size to at least 16px, preferably larger. Ensure high contrast between text and background. Use simple language in captions. Consider adding alt text for images that can be read aloud by screen readers.",
+          "status": "done",
+          "testStrategy": "Conduct user testing with children. Use tools to check color contrast ratios. Test with screen readers for accessibility."
+        },
+        {
+          "id": 5,
+          "title": "Add touch and visual interactivity cues",
+          "description": "Implement touch interactions and add visual cues to indicate interactivity for young users.",
+          "dependencies": [
+            2,
+            4
+          ],
+          "details": "Add touch event listeners for swipe gestures between cards. Implement visual feedback for touch interactions (e.g., subtle scale or color change). Add icons or animations to indicate swipe functionality. Ensure all interactive elements have clear visual affordances.",
+          "status": "done",
+          "testStrategy": "Test on touch devices with various screen sizes. Conduct usability testing with children to ensure intuitive interaction."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Connect Breed Selection to Gallery Display",
+      "description": "Implement the logic to update the gallery content when a breed is selected, fetching and displaying the appropriate fun facts and images.",
+      "details": "1. Create a state management system to track selected breed\n2. Implement event handlers for breed selection buttons\n3. Create a function to fetch fact data for the selected breed\n4. Implement gallery update logic when breed changes\n5. Add smooth transitions between different breed selections\n6. Implement preloading of images for faster display\n7. Add error handling for failed image loads\n8. Maintain selection state if user navigates away and returns\n9. Implement analytics to track breed selections\n10. Add visual feedback to show which breed is currently selected\n\nExample state management:\n```javascript\nlet currentBreed = null;\n\nfunction selectBreed(breedName) {\n  currentBreed = breedName;\n  updateGallery(breedName);\n  updateSelectedBreedVisual(breedName);\n  logBreedSelection(breedName);\n}\n\nasync function updateGallery(breedName) {\n  const facts = await fetchBreedFacts(breedName);\n  renderFactsToGallery(facts);\n}```",
+      "testStrategy": "Test breed selection and gallery update flow. Verify correct facts are displayed for each breed. Test transitions between breeds. Verify state is maintained when navigating away and back. Test error handling by simulating failed image loads. Verify analytics events are fired correctly.",
+      "priority": "medium",
+      "dependencies": [
+        3,
+        6
+      ],
+      "status": "done",
+      "subtasks": []
+    },
+    {
+      "id": 8,
+      "title": "Implement Data Fetching and Caching",
+      "description": "Finalize local data structures for breeds and fun facts, ensuring correct image paths and proper management of static data.",
+      "status": "pending",
+      "dependencies": [
+        4,
+        "5"
+      ],
+      "priority": "medium",
+      "details": "1. Create and finalize local data structures in breedData.ts for all dog breeds\n2. Ensure all static image paths in breedData.ts are correct and correspond to placeholder images\n3. Manually add placeholder images to src/assets/images/ directory\n4. Implement utility functions to access breed data and fun facts\n5. Create type definitions for breed data structures\n6. Organize fun facts by breed in the data structure\n7. Implement functions to retrieve random fun facts for a specific breed\n8. Add validation to ensure all required breed data fields are present\n9. Create helper functions to filter and search breeds by characteristics\n10. Document the data structure format for future reference\n\nExample data structure implementation:\n```typescript\n// src/data/breedData.ts\nexport interface BreedData {\n  id: string;\n  name: string;\n  description: string;\n  imagePath: string;\n  characteristics: string[];\n  funFacts: string[];\n}\n\nexport const breeds: BreedData[] = [\n  {\n    id: 'golden-retriever',\n    name: 'Golden Retriever',\n    description: 'Friendly, intelligent and devoted',\n    imagePath: '/src/assets/images/golden-retriever.jpg',\n    characteristics: ['friendly', 'intelligent', 'devoted'],\n    funFacts: [\n      'Golden Retrievers were originally bred as hunting dogs in Scotland.',\n      'They have water-repellent double coats that shed seasonally.',\n      'The average lifespan of a Golden Retriever is 10-12 years.'\n    ]\n  },\n  // Add more breeds here\n];\n\n// Helper functions\nexport function getBreedById(id: string): BreedData | undefined {\n  return breeds.find(breed => breed.id === id);\n}\n\nexport function getRandomFunFact(breedId: string): string {\n  const breed = getBreedById(breedId);\n  if (!breed || breed.funFacts.length === 0) return 'No fun facts available';\n  \n  const randomIndex = Math.floor(Math.random() * breed.funFacts.length);\n  return breed.funFacts[randomIndex];\n}\n```",
+      "testStrategy": "Verify all breed data is correctly structured. Test that all image paths are valid and images exist in the assets directory. Test helper functions to ensure they return expected data. Verify type safety of the data structures. Test edge cases like missing data or invalid breed IDs.",
+      "subtasks": []
+    },
+    {
+      "id": 9,
+      "title": "Integrate Complete User Flow",
+      "description": "Connect all components to create the complete user flow from age selection to breed selection to fun fact exploration.",
+      "details": "1. Implement application state management\n2. Create the main application component to orchestrate user flow\n3. Connect age selection to personalization features\n4. Implement transitions between different screens\n5. Add navigation controls if needed\n6. Ensure state persistence across the entire flow\n7. Implement analytics to track full user journeys\n8. Add completion indicators or feedback\n9. Implement session management\n10. Add parent controls or help section\n\nExample flow implementation:\n```javascript\nclass DogLearningApp {\n  constructor() {\n    this.currentScreen = 'age-selection';\n    this.userAge = null;\n    this.selectedBreed = null;\n    this.init();\n  }\n  \n  init() {\n    this.loadSavedState();\n    this.renderCurrentScreen();\n    this.attachEventListeners();\n  }\n  \n  loadSavedState() {\n    const savedState = localStorage.getItem('app_state');\n    if (savedState) {\n      const state = JSON.parse(savedState);\n      this.userAge = state.userAge;\n      this.selectedBreed = state.selectedBreed;\n      this.currentScreen = state.currentScreen || 'age-selection';\n    }\n  }\n  \n  saveState() {\n    localStorage.setItem('app_state', JSON.stringify({\n      userAge: this.userAge,\n      selectedBreed: this.selectedBreed,\n      currentScreen: this.currentScreen\n    }));\n  }\n  \n  setAge(years, months) {\n    this.userAge = { years, months };\n    this.saveState();\n    this.navigateTo('breed-selection');\n  }\n  \n  selectBreed(breed) {\n    this.selectedBreed = breed;\n    this.saveState();\n    this.navigateTo('fact-gallery');\n  }\n  \n  navigateTo(screen) {\n    this.currentScreen = screen;\n    this.saveState();\n    this.renderCurrentScreen();\n  }\n  \n  renderCurrentScreen() {\n    // Hide all screens\n    document.querySelectorAll('.screen').forEach(el => {\n      el.style.display = 'none';\n    });\n    \n    // Show current screen\n    const currentScreenEl = document.getElementById(`${this.currentScreen}-screen`);\n    if (currentScreenEl) {\n      currentScreenEl.style.display = 'block';\n    }\n    \n    // Initialize current screen\n    switch(this.currentScreen) {\n      case 'age-selection':\n        this.initAgeSelection();\n        break;\n      case 'breed-selection':\n        this.initBreedSelection();\n        break;\n      case 'fact-gallery':\n        this.initFactGallery();\n        break;\n    }\n  }\n}```",
+      "testStrategy": "Test the complete user flow from start to finish. Verify state is maintained correctly throughout the flow. Test navigation between different screens. Verify analytics capture the full user journey. Test state persistence when refreshing the page. Verify all transitions work smoothly.",
+      "priority": "high",
+      "dependencies": [
+        2,
+        7,
+        8
+      ],
+      "status": "pending",
+      "subtasks": []
+    },
+    {
+      "id": 10,
+      "title": "Implement Deployment and Analytics",
+      "description": "Set up the deployment pipeline, hosting, and analytics to track usage and gather insights for future improvements.",
+      "details": "1. Configure static hosting on Netlify, Vercel, or similar platform\n2. Set up CI/CD pipeline for automated deployments\n3. Implement basic analytics to track user interactions\n4. Add error logging and monitoring\n5. Configure CDN for image caching\n6. Implement performance monitoring\n7. Set up A/B testing framework for future experiments\n8. Create documentation for maintenance and updates\n9. Implement backup and recovery procedures\n10. Add usage reporting dashboard\n\nExample analytics implementation:\n```javascript\nclass Analytics {\n  static logEvent(category, action, label = null) {\n    // Basic event logging\n    console.log(`[Analytics] ${category}: ${action}${label ? ` (${label})` : ''}`);\n    \n    // Send to analytics service if available\n    if (window.gtag) {\n      window.gtag('event', action, {\n        'event_category': category,\n        'event_label': label\n      });\n    }\n    \n    // Could also implement custom analytics endpoint\n    fetch('/api/analytics', {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({ category, action, label, timestamp: new Date() }),\n      // Use sendBeacon for events during page unload\n      keepalive: true\n    }).catch(err => console.error('Analytics error:', err));\n  }\n  \n  static logPageView(pageName) {\n    this.logEvent('navigation', 'page_view', pageName);\n  }\n  \n  static logBreedSelection(breed) {\n    this.logEvent('interaction', 'select_breed', breed);\n  }\n  \n  static logAgeSelection(age) {\n    this.logEvent('interaction', 'select_age', JSON.stringify(age));\n  }\n  \n  static logFactView(breedName, factId) {\n    this.logEvent('interaction', 'view_fact', `${breedName}_${factId}`);\n  }\n}```",
+      "testStrategy": "Test deployment process to ensure site works correctly in production. Verify analytics events are captured correctly. Test performance in production environment. Verify CDN caching works as expected. Test error logging by triggering known errors. Verify monitoring alerts work correctly.",
+      "priority": "medium",
+      "dependencies": [
+        9
+      ],
+      "status": "pending",
+      "subtasks": []
+    }
+  ]
+}

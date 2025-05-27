@@ -1,0 +1,85 @@
+# Task ID: 5
+# Title: Implement Backend Image Generation Service
+# Status: in-progress
+# Dependencies: 4
+# Priority: high
+# Description: Develop a script to automatically generate cartoon-style images for all breeds and fun facts using the OpenAI DALL-E API, based on the prompts in breedData.ts.
+# Details:
+1. Create a script (Node.js or Python) that automates image generation
+2. Configure the script to read image prompts from breedData.ts
+3. Set up environment variables to securely store the OpenAI API key in .env
+4. Implement API calls to OpenAI DALL-E with appropriate parameters for cartoon-style images
+5. Generate main breed images using the imagePrompt fields from breedData.ts
+6. Save main breed images to dogbreed-app/src/assets/images/
+7. Generate fun fact images for each breed's fun facts
+8. Save fun fact images to dogbreed-app/src/assets/images/funfacts/
+9. Ensure consistency in style across all images (cartoon-style, child-friendly)
+10. Maintain a consistent aspect ratio and resolution for all images
+11. Implement error handling for API failures or rate limiting
+12. Add logging to track progress of image generation
+13. Verify all images are appropriate for the target age group
+14. Ensure filenames match the expected format in the application
+
+Note: This approach uses a script to automate the image generation process rather than implementing a full backend service. The script will handle the API calls to OpenAI and manage the storage of images locally.
+
+# Test Strategy:
+Test the script with a small subset of breeds before running it for all data. Verify API integration works correctly. Check error handling for various failure scenarios. Review all generated images for style consistency. Verify images are appropriate for the target age group. Confirm all images are saved to the correct paths with proper filenames. Test the application with the new images to ensure they load correctly. Verify all breeds and fun facts have corresponding images.
+
+# Subtasks:
+## 1. Set up project structure and dependencies for image generation script [done]
+### Dependencies: None
+### Description: Create a Node.js project with necessary dependencies for OpenAI API integration and environment variable management.
+### Details:
+1. Initialize a new Node.js project with `npm init`
+2. Install required packages: `openai`, `dotenv`, `fs-extra`, and `axios`
+3. Create a basic project structure with folders for source code and utilities
+4. Set up a .env file to store the OpenAI API key securely
+5. Create a configuration file to manage paths and constants
+6. Set up a basic logging utility for tracking progress
+
+## 2. Implement OpenAI DALL-E API client function [in-progress]
+### Dependencies: 5.1
+### Description: Create a reusable function to handle API calls to OpenAI's DALL-E service with appropriate error handling and rate limiting considerations.
+### Details:
+1. Create a client module that initializes the OpenAI SDK with the API key from .env
+2. Implement a function that takes a prompt and returns the generated image URL
+3. Configure the API call with parameters for cartoon-style images (size, quality, style)
+4. Add error handling for API failures, rate limiting, and other potential issues
+5. Implement exponential backoff for retries when rate limited
+6. Add logging for successful generations and failures
+
+## 3. Develop image download and storage functionality [pending]
+### Dependencies: 5.1
+### Description: Create functions to download images from URLs returned by the DALL-E API and save them to the appropriate locations in the project structure.
+### Details:
+1. Implement a function to download an image from a URL using axios
+2. Create a function to save images to the correct paths (src/assets/images/ for breed images, src/assets/images/funfacts/ for fun fact images)
+3. Ensure directories exist before saving files
+4. Implement proper file naming conventions based on breed IDs and fun fact indices
+5. Add error handling for download and file system operations
+6. Include logging for successful saves and any failures
+
+## 4. Create main script to parse breed data and orchestrate image generation [pending]
+### Dependencies: 5.2, 5.3
+### Description: Develop the main script that reads breed data, extracts prompts, and coordinates the generation and saving of all required images.
+### Details:
+1. Implement functionality to parse and import the breedData.ts file
+2. Create a main function that loops through all breeds and their fun facts
+3. For each breed, extract the imagePrompt and generate the main breed image
+4. For each fun fact, construct an appropriate prompt and generate an image
+5. Implement progress tracking to show completion percentage
+6. Add logic to skip existing images to allow for resuming interrupted runs
+7. Implement concurrency control to avoid overwhelming the API
+
+## 5. Optimize image generation parameters and verify results [pending]
+### Dependencies: 5.4
+### Description: Fine-tune the image generation parameters to ensure consistency in style and quality across all images, and implement verification of the generated images.
+### Details:
+1. Experiment with different prompt structures to achieve consistent cartoon-style images
+2. Add prefix/suffix text to prompts to maintain style consistency
+3. Implement image verification to check dimensions, file size, and format
+4. Create a report of all generated images with their paths and sizes
+5. Add functionality to identify and regenerate any problematic images
+6. Implement a final verification step to ensure all required images exist
+7. Create documentation for the image generation process
+

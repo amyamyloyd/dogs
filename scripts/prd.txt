@@ -1,0 +1,174 @@
+# Overview
+
+This is a single-page proof-of-concept website designed for children aged 5 and under to learn about dogs. The site uses vibrant visuals, large interactive buttons, and AI-generated images to present five fun facts about five popular dog breeds. Each fact is paired with a matching image to help young children learn through visual association. The goal is to create an engaging, educational, and developmentally appropriate digital experience without requiring login or adult assistance.
+
+# Core Features
+
+## 1. Age Selection Prompt
+
+* **What it does**: Asks the child their age in years and months.
+* **Why it's important**: Helps personalize content tone or potentially adjust reading level or visuals in the future.
+* **How it works**: Simple dropdown or selection interface shown before the main content loads.
+
+## 2. Breed Selector
+
+* **What it does**: Lets the child choose from five dog breeds (Corgis, Labradors, Pugs, German Shepherds, Dachshunds).
+* **Why it's important**: Gives children autonomy and focus; narrows the learning topic.
+* **How it works**: Large buttons with cartoon-style dog images representing each breed.
+
+## 3. Fun Fact Gallery
+
+* **What it does**: Displays five AI-generated image cards for each breed, each showing a fun fact.
+* **Why it's important**: Provides educational content in a visual and memorable format.
+* **How it works**: When a breed is selected, the gallery populates with five cards. Each card has a dog image in context of the fun fact and a short, readable caption.
+
+## 4. AI Image Generation (Back-end)
+
+* **What it does**: Generates five distinct, child-friendly dog images per breed, matched to the fun facts.
+* **Why it's important**: Makes the experience unique, visually engaging, and scalable for more breeds later.
+* **How it works**: Image prompts are predefined per fun fact and passed to an image generation API.
+
+# User Experience
+
+## User Personas
+
+* **Child Learner (age 3–5)**: Curious, exploratory, enjoys visual stimuli. Cannot read long sentences.
+* **Parent/Guardian**: May assist initially but prefers apps that are intuitive for solo child use.
+
+## Key User Flows
+
+1. Child visits website.
+2. Selects age (optional personalization step).
+3. Chooses a dog breed by tapping an image button.
+4. Gallery loads with five visual fun fact cards.
+5. Child explores and taps images for fun fact captions.
+
+## UI/UX Considerations
+
+* Bright, inviting colors
+* Extra-large buttons for touch use
+* Limited text per screen
+* Alt text and image descriptions for accessibility
+* No scrolling; all facts visible in gallery layout
+
+# Technical Architecture
+
+## System Components
+
+* Frontend: HTML/CSS/JavaScript (React or basic static site for MVP)
+* Backend: Python Flask or Node.js server to call AI image generation API
+* Image Generator: OpenAI’s DALL·E or similar, with predefined prompts per breed/fact
+* Hosting: Static hosting (e.g., Netlify, Vercel) or small cloud instance (e.g., Render)
+
+## Data Models
+
+* Breed: Name, icon image, list of facts
+* Fact: Text caption, image prompt, image URL
+
+## APIs and Integrations
+
+* Image generation API (OpenAI or Stable Diffusion)
+* Optional: logging or analytics for usage
+
+## Infrastructure Requirements
+
+* Minimal: no database for MVP
+* JSON file can store breed → facts → prompts → image URL mapping
+* CDN for caching AI-generated images
+
+# Development Roadmap
+
+## MVP Requirements
+
+* Age selection UI
+* Static breed selection buttons
+* Gallery layout with hardcoded facts/images
+* Backend logic to generate & store images
+* Render gallery from JSON structure
+
+## Future Enhancements
+
+* Audio read-aloud for fun facts
+* More breeds
+* Personalization by age
+* Save/share favorite dogs
+* Language selection
+* Offline mode / app wrapper
+
+# Logical Dependency Chain
+
+1. Design UX mockup: Buttons, gallery, breed selection layout
+2. Create fun fact content: 5 facts × 5 breeds
+3. Test AI prompts: Generate initial set of breed/fact images
+4. Build breed selection UI
+5. Build static gallery layout
+6. Integrate backend image fetch/store
+7. Connect breed selection to gallery display
+8. Wrap into a single-page app or static site
+
+# Risks and Mitigations
+
+## Technical Challenges
+
+* **Risk**: AI-generated images may not always be child-appropriate
+
+  * **Mitigation**: Curate prompts and pre-screen images
+* **Risk**: Performance issues on slow devices
+
+  * **Mitigation**: Compress images, lazy-load if needed
+
+## MVP Scope Clarity
+
+* **Risk**: Overbuilding before basic working version
+
+  * **Mitigation**: Stick to one-page app, 5 breeds, 5 facts each
+
+## Resource Constraints
+
+* **Risk**: API limits or cost for image generation
+
+  * **Mitigation**: Generate images in advance and cache statically
+
+# Appendix
+
+## Sample Fun Facts
+
+### Labrador
+
+1. Love water
+2. Have webbed feet for swimming
+3. Come in yellow, black, and chocolate
+4. Are great with families
+5. Are sporting dogs known for hunting
+
+### Corgi
+
+1. Have very short legs
+2. Were bred to herd cattle
+3. Have big ears
+4. Love to play
+5. Are royal dogs in the UK
+
+### Pug
+
+1. Have curly tails
+2. Snore when they sleep
+3. Are very affectionate
+4. Love treats
+5. Were once royal dogs in China
+
+### German Shepherd
+
+1. Help police and rescue teams
+2. Are very smart
+3. Love to play fetch
+4. Are loyal and protective
+5. Learn commands quickly
+
+### Dachshund
+
+1. Have long bodies
+2. Are also called “wiener dogs”
+3. Were bred to hunt badgers
+4. Come in smooth, long, or wire-haired coats
+5. Like to dig in the ground

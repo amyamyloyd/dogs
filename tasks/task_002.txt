@@ -1,0 +1,52 @@
+# Task ID: 2
+# Title: Implement Age Selection UI Component
+# Status: done
+# Dependencies: 1
+# Priority: medium
+# Description: Create the age selection prompt that asks children their age in years and months using a simple, visual interface.
+# Details:
+1. Design a child-friendly age selection component with dropdown or visual selector
+2. Create separate selectors for years (1-5) and months (0-11)
+3. Use visual cues like candles on a cake for years
+4. Implement large touch targets for all interactive elements
+5. Store selected age in browser localStorage
+6. Add simple animations for engagement
+7. Include skip option for parents
+8. Ensure the component is fully accessible
+9. Add clear instructions with minimal text
+10. Implement basic validation to prevent impossible combinations
+
+# Test Strategy:
+Test usability with target age group if possible. Verify that selections are correctly stored. Test keyboard navigation and screen reader compatibility. Ensure the interface is intuitive enough for young children to use with minimal adult assistance.
+
+# Subtasks:
+## 1. Design Visual Age Selection Interface [done]
+### Dependencies: None
+### Description: Create a child-friendly UI design for selecting age in years (1-5) and months (0-11) using visual elements.
+### Details:
+Use candle icons for years, colorful numbers for months. Ensure large touch targets and clear visual hierarchy.
+
+## 2. Implement Age Selection Component [done]
+### Dependencies: 2.1
+### Description: Develop the interactive age selection component based on the approved design.
+### Details:
+Use HTML, CSS, and JavaScript to create separate selectors for years and months. Implement touch-friendly controls and basic animations for engagement.
+
+## 3. Add Accessibility Features [done]
+### Dependencies: 2.2
+### Description: Ensure the age selection component is fully accessible to all users.
+### Details:
+Implement ARIA attributes, keyboard navigation, and screen reader compatibility. Ensure sufficient color contrast and text alternatives for visual elements.
+
+## 4. Implement Data Storage and Validation [done]
+### Dependencies: 2.2
+### Description: Add functionality to store the selected age in browser localStorage and implement basic validation.
+### Details:
+Store age data in JSON format. Implement validation to prevent impossible age combinations. Add a skip option for parents.
+
+## 5. Add Instructions and Final Polish [done]
+### Dependencies: 2.1, 2.2, 2.3, 2.4
+### Description: Integrate clear instructions with minimal text and apply final visual enhancements.
+### Details:
+Create concise, child-friendly instructions. Refine animations and visual feedback. Ensure consistent styling and smooth user experience.
+
